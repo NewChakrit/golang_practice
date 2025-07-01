@@ -5,19 +5,17 @@ import (
 	"strings"
 )
 
-// 01 : Reverse String
-var hello string = "hello"
+// reverse string
 
 func main() {
-	splitHello := strings.Split(hello, "")
-	//fmt.Println(splitHello)
+	var hello = "hello"
+	split := strings.Split(hello, "")
+	fmt.Println(split)
 
-	reverseHello := make([]string, len(splitHello))
-	for i, j := 0, len(splitHello)-1; i < len(splitHello); i, j = i+1, j-1 {
-		reverseHello[i] = splitHello[j]
-
+	reverseSlice := make([]string, len(split))
+	for i, j := len(split)-1, 0; j < len(split); i, j = i-1, j+1 {
+		reverseSlice[j] = split[i]
 	}
 
-	result := strings.Join(reverseHello, "")
-	fmt.Println(result)
+	fmt.Println(strings.Join(reverseSlice, ""))
 }
