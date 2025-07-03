@@ -15,6 +15,13 @@ map[string][]string{
   "ant": {"tan", "nat"},
   "abt": {"bat"},
 }
+
+rune คือ alias ของ int32
+ใช้แทน character (ตัวอักษร) ใน Unicode
+
+sort.Slice เป็นฟังก์ชันในแพ็กเกจ sort ของ Go
+ใช้สำหรับ sort slice อะไรก็ได้ (ไม่จำกัดว่าต้องเป็น int หรือ string)
+โดยให้เรากำหนดเงื่อนไขการเปรียบเทียบเอง
 */
 
 func main() {
@@ -27,7 +34,7 @@ func main() {
 }
 
 func groupAnagrams(input []string) map[string][]string {
-	var result = make(map[string][]string)
+	var result = map[string][]string{}
 
 	for _, v := range input {
 		runes := []rune(v)
