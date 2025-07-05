@@ -11,18 +11,46 @@ import "fmt"
 */
 
 func main() {
-	pyramid(4)
-}
+	m := 4
 
-func pyramid(n int) {
-	for i := 1; i <= n; i++ {
-		for j := 1; j <= n-i; j++ {
+	for i := 1; i <= m; i++ {
+		for j := m; j > i; j-- {
 			fmt.Print(" ")
 		}
 
-		for k := 1; k <= 2*i-1; k++ {
+		for p := 0; p < 2*i-1; p++ {
 			fmt.Print("*")
 		}
+
+		fmt.Println()
+	}
+
+	for i := 1; i <= m; i++ {
+		for j := 0; j < i; j++ {
+			fmt.Print(" ")
+		}
+
+		for p := m; p > (2*i)-(m-1); p-- {
+			fmt.Print("*")
+		}
+
 		fmt.Println()
 	}
 }
+
+//func main() {
+//	pyramid(4)
+//}
+//
+//func pyramid(n int) {
+//	for i := 1; i <= n; i++ {
+//		for j := 1; j <= n-i; j++ {
+//			fmt.Print(" ")
+//		}
+//
+//		for k := 1; k <= 2*i-1; k++ {
+//			fmt.Print("*")
+//		}
+//		fmt.Println()
+//	}
+//}

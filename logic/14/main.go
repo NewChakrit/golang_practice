@@ -27,23 +27,22 @@ sort.Slice เป็นฟังก์ชันในแพ็กเกจ sort 
 func main() {
 	result := groupAnagrams([]string{"eat", "tea", "tan", "ate", "nat", "bat"})
 
-	fmt.Println(result)
 	for k, v := range result {
 		fmt.Printf("key: %v, value: %v\n", k, v)
 	}
 }
 
-func groupAnagrams(input []string) map[string][]string {
-	var result = map[string][]string{}
-
-	for _, v := range input {
-		runes := []rune(v)
-
+func groupAnagrams(words []string) map[string][]string {
+	result := map[string][]string{}
+	for _, word := range words {
+		runes := []rune(word) // ทำให้กลายเป็น uncode
 		sort.Slice(runes, func(i, j int) bool {
-			return runes[i] < runes[j] // "eat" → ['a', 'e', 't']
+			return runes[i] < runes[j] // เรียง unicode
 		})
 		key := string(runes)
-		result[key] = append(result[key], v)
+
+		result[key] = append(result[key], word)
+		//fmt.Println(key)
 	}
 
 	return result
