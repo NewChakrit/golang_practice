@@ -85,8 +85,20 @@ Output: 5, nums = [0,1,4,0,3,,,_]
 */
 
 func main() {
-	fmt.Println(removeElement([]int{3, 2, 2, 3}, 3))
-	fmt.Println(removeElement([]int{0, 1, 2, 2, 3, 0, 4, 2}, 2))
+	fmt.Println(removeElement2([]int{3, 2, 2, 3}, 3))
+	fmt.Println(removeElement2([]int{0, 1, 2, 2, 3, 0, 4, 2}, 2))
+}
+
+func removeElement2(nums []int, val int) int {
+	n := 0
+	for i := 0; i < len(nums); i++ {
+		if nums[i] != val {
+			nums[n] = nums[i]
+			n++
+		}
+	}
+	fmt.Println(nums)
+	return n
 }
 
 func removeElement(nums []int, val int) int {
