@@ -54,7 +54,6 @@ func main() {
 func lengthOfLastWord(s string) int {
 	sprS := strings.Split(s, "")
 	count := 0
-
 	for i := len(sprS) - 1; i >= 0; i-- {
 		if sprS[i] != " " {
 			count++
