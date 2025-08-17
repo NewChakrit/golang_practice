@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+	"regexp"
 	"strings"
 )
 
@@ -62,4 +64,21 @@ func strStr(haystack string, needle string) int {
 	}
 
 	return -1
+}
+
+func isPalindrome(s string) bool {
+	reg, _ := regexp.Compile("[^a-zA-Z0-9]+")
+	cleanStr := reg.ReplaceAllString(s, "")
+	cleanStr = strings.ToLower(cleanStr)
+
+	fmt.Println("cleanStr =", cleanStr)
+	fmt.Println(len(cleanStr))
+
+	//for i := 0, j := len(cleanStr; i < len(cleanStr)/2; i = i+1, j = j-1 {
+	//	if cleanStr[i] != cleanStr[j]{
+	//		return false
+	//	}
+	//}
+
+	return true
 }

@@ -44,8 +44,8 @@ return ค่า k
 */
 
 func main() {
-	fmt.Println(removeDuplicatesS3([]int{1, 1, 2}))
-	fmt.Println(removeDuplicatesS3([]int{0, 0, 1, 1, 1, 2, 2, 3, 3, 4}))
+	fmt.Println(removeDuplicatesS3([]int{1, 1, 2}))                      // 2
+	fmt.Println(removeDuplicatesS3([]int{0, 0, 1, 1, 1, 2, 2, 3, 3, 4})) // 5
 }
 
 func removeDuplicatesS3(nums []int) int {
